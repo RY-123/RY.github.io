@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Beloved Liya</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f5f0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3.5em;
+            color: #b33939;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+        p {
+            font-size: 1.3em;
+            color: #333;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        .rose-petals {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .petal {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: url('https://i.imgur.com/Q8qkp13.png') no-repeat center;
+            background-size: cover;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>To My Beloved Liya</h1>
+            <p>
+                Liya, you are the light of my life, my heart's delight. Your beauty surpasses the most exquisite roses, and your smile is my most treasured view. Every moment with you is a dream come true.
+            </p>
+            <p>
+                Liya，你是我生命的光芒，我心中的最爱。你的美丽超越了最精致的玫瑰，你的存在让我的世界充满了喜悦和爱。与你共度的每一天，都是一个实现的梦想。
+            </p>
+            <p>
+                Liya, sei la luce della mia vita, la gioia del mio cuore. La tua bellezza supera quella delle rose più squisite, e la tua presenza riempie il mio mondo di gioia e amore. Ogni giorno con te è un sogno realizzato.
+            </p>
+        </div>
+    </div>
+    <div class="rose-petals">
+        <!-- Generate petals dynamically -->
+        <script>
+            function createPetals(num) {
+                const container = document.querySelector('.rose-petals');
+                for (let i = 0; i < num; i++) {
+                    const petal = document.createElement('div');
+                    petal.classList.add('petal');
+                    petal.style.left = `${Math.random() * 100}vw`;
+                    petal.style.animationDuration = `${Math.random() * 15 + 5}s`;
+                    petal.style.animationDelay = `${Math.random() * 10}s`;
+                    petal.style.opacity = `${Math.random() * 0.5 + 0.5}`;
+                    container.appendChild(petal);
+                }
+            }
+            createPetals(80);
+        </script>
+    </div>
+</body>
+</html>
